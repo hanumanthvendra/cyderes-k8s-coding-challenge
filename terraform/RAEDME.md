@@ -83,7 +83,7 @@ terraform apply
 EKS Cluster
 EKS Control Plane (IPv4)
 
-Addons: CoreDNS, kube-proxy, Node Monitoring Agent, Pod Identity Agent
+## Addons: CoreDNS, kube-proxy, Node Monitoring Agent, Pod Identity Agent
 
 Zonal shift configuration enabled
 
@@ -93,8 +93,6 @@ One managed node group (db_node_group)
 EC2 instance type: m5.large
 
 AMI: AL2023_x86_64_STANDARD
-
-50 GB disk size
 
 SSH access enabled via custom key pair and security group
 
@@ -108,16 +106,16 @@ KMS key with aliases: eks/<cluster-name>/ebs
 
 Custom key pair for SSH access
 
-🔒 Security Groups
-A custom security group allows SSH access from CIDR block 10.0.0.0/8.
+# 🔒 Security Groups
+A custom security group allows SSH access from CIDR block.
 
-🚀 Deploy Nginx Ingress Controller Using Helm
+# 🚀 Deploy Nginx Ingress Controller Using Helm
 After provisioning the EKS cluster, you can deploy the NGINX Ingress Controller and an example application.
 
-📘 Reference Guide
+# 📘 Reference Guide
 Medium Article: Setting up NGINX Ingress Controller with EKS
 
-✅ Deployment Steps
+## ✅ Deployment Steps
 Add the Helm repo:
 
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
@@ -129,11 +127,11 @@ Install the NGINX ingress controller with the help of https://amod-kadam.medium.
 ✅ Note: The EXTERNAL-IP above is the public-facing ALB URL automatically created by AWS Load Balancer Controller or NGINX.
 
 
-📤 Outputs
+## 📤 Outputs
 Check the outputs.tf file or run:
 
 
-terraform output
+## terraform output
 📌 Notes
 Make sure your module.vpc provides required subnet outputs (private, intra).
 
@@ -143,7 +141,7 @@ To disable EKS resources, the module includes disabled_eks and disabled_eks_mana
 
 
 
-📚 References
+## 📚 References
 Terraform AWS EKS Module
 
 AWS EKS Documentation
@@ -154,7 +152,7 @@ NGINX Ingress Controller
 
 
 
-🧑‍💻 Author
+## 🧑‍💻 Author
 Hanumanth Vendra
 GitHub: @hanumanthvendra
 
