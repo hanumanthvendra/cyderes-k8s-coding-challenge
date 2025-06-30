@@ -128,6 +128,7 @@ Install the NGINX ingress controller with the help of https://amod-kadam.medium.
 
 ✅ Note: The EXTERNAL-IP above is the public-facing ALB URL automatically created by AWS Load Balancer Controller or NGINX.
 
+
 📤 Outputs
 Check the outputs.tf file or run:
 
@@ -140,6 +141,8 @@ Instance type can be adjusted by changing instance_types inside eks_managed_node
 
 To disable EKS resources, the module includes disabled_eks and disabled_eks_managed_node_group examples.
 
+
+
 📚 References
 Terraform AWS EKS Module
 
@@ -148,6 +151,8 @@ AWS EKS Documentation
 Helm Charts
 
 NGINX Ingress Controller
+
+
 
 🧑‍💻 Author
 Hanumanth Vendra
