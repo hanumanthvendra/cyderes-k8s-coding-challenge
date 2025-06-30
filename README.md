@@ -16,8 +16,6 @@ cyderes-k8s-coding-challenge/
  │ ├── templates/ # Helm templates (Deployment, Service, etc.)
  │ └── values.yaml # Default Helm values
  └── Jenkinsfile # Jenkins pipeline script
-yaml
-CopyEdit
 
 ---
 
@@ -39,7 +37,6 @@ The CI/CD pipeline performs the following stages:
 
 Using SSH credentials configured in Jenkins.
 
-```groovy
 git url: 'git@github.com:<your-repo>/cyderes-k8s-coding-challenge.git', branch: 'main'
 
 2. Build and Push Docker Image
@@ -92,8 +89,7 @@ kubeconfig at /var/lib/jenkins/.kube/config accessible by Jenkins
 
 
 📦 How to Deploy Manually (Optional)
-bash
-CopyEdit
+
 cd nginx-hello-friend
 
 # Build and tag Docker image
@@ -109,4 +105,7 @@ helm upgrade nginx-hello-friend . \
     --namespace nginx-hello-friend \
     --set image.repository=public.ecr.aws/i6m7c7y9/demo \
     --set image.tag=1.0
+    
+![jenkins-ci-pic](https://github.com/user-attachments/assets/b39f3050-6f9d-4e85-8518-89078a75d948)
+![jenkins-ci-2](https://github.com/user-attachments/assets/26841d8c-9b06-4faa-a65d-3374414d66dd)
 
