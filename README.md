@@ -1,1 +1,112 @@
-# cyderes-k8s-coding-challenge
+✅ Helm Chart Deployment with Jenkins CI/CD
+
+# nginx-hello-friend Deployment with Helm and Jenkins CI/CD
+
+This project contains a sample Helm chart and Jenkins pipeline to automate the build, containerization, and deployment of a simple web server (`nginx-hello-friend`) to a Kubernetes cluster using AWS ECR and Helm.
+
+---
+
+## 📁 Project Structure
+
+
+cyderes-k8s-coding-challenge/
+ ├── nginx-hello-friend/ # Application and Helm chart directory
+ │ ├── Dockerfile # Dockerfile to build image
+ │ ├── Chart.yaml # Helm chart metadata
+ │ ├── templates/ # Helm templates (Deployment, Service, etc.)
+ │ └── values.yaml # Default Helm values
+ └── Jenkinsfile # Jenkins pipeline script
+yaml
+CopyEdit
+
+---
+
+## ⚙️ Technologies Used
+
+- **Kubernetes** (EKS)
+- **Helm** for packaging and deployment
+- **Docker** for containerization
+- **AWS ECR Public** for image registry
+- **Jenkins** for CI/CD automation
+
+---
+
+## 🚀 CI/CD Pipeline Overview
+
+The CI/CD pipeline performs the following stages:
+
+### 1. Clone the Git Repository
+
+Using SSH credentials configured in Jenkins.
+
+```groovy
+git url: 'git@github.com:<your-repo>/cyderes-k8s-coding-challenge.git', branch: 'main'
+
+2. Build and Push Docker Image
+Builds the Docker image from nginx-hello-friend/Dockerfile
+
+
+Tags the image with Jenkins BUILD_NUMBER
+
+
+Pushes it to AWS Public ECR:
+ public.ecr.aws/i6m7c7y9/demo:<BUILD_NUMBER>
+
+
+3. Deploy via Helm
+Deploys the image to EKS using Helm
+
+
+Uses the chart in nginx-hello-friend/
+
+
+Dynamically sets image tag to match the build number:
+
+helm upgrade nginx-hello-friend ./nginx-hello-friend \
+    --install \
+    --namespace nginx-hello-friend \
+    --set image.repository=public.ecr.aws/i6m7c7y9/demo \
+    --set image.tag=<BUILD_NUMBER>
+
+🔐 Prerequisites
+Jenkins with:
+
+
+Docker installed and usable by the jenkins user
+
+
+AWS credentials configured as a Jenkins credential (aws-credentials-id)
+
+
+Git SSH credentials for GitHub (git-ssh-key)
+
+
+EKS cluster configured and accessible from Jenkins master
+
+
+Helm and kubectl installed on Jenkins master
+
+
+kubeconfig at /var/lib/jenkins/.kube/config accessible by Jenkins
+
+
+
+📦 How to Deploy Manually (Optional)
+bash
+CopyEdit
+cd nginx-hello-friend
+
+# Build and tag Docker image
+docker build -t public.ecr.aws/i6m7c7y9/demo:1.0 .
+
+# Push to ECR
+aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
+docker push public.ecr.aws/i6m7c7y9/demo:1.0
+
+# Deploy with Helm
+helm upgrade nginx-hello-friend . \
+    --install \
+    --namespace nginx-hello-friend \
+    --set image.repository=public.ecr.aws/i6m7c7y9/demo \
+    --set image.tag=1.0
+
