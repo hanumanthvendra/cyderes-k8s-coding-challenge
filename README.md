@@ -109,3 +109,9 @@ helm upgrade nginx-hello-friend . \
 ![jenkins-ci-pic](https://github.com/user-attachments/assets/b39f3050-6f9d-4e85-8518-89078a75d948)
 ![jenkins-ci-2](https://github.com/user-attachments/assets/26841d8c-9b06-4faa-a65d-3374414d66dd)
 
+🔹 3. Access the Application:
+
+http://ac51886d48b5b4e1591a74d670b32fc9-846705458.us-east-1.elb.amazonaws.com/
+
+![Screenshot 2025-06-30 114108](https://github.com/user-attachments/assets/e6737402-00e4-4a94-b668-9f2870f618f4)
+
