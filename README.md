@@ -115,3 +115,12 @@ http://ac51886d48b5b4e1591a74d670b32fc9-846705458.us-east-1.elb.amazonaws.com/
 
 ![Screenshot 2025-06-30 114108](https://github.com/user-attachments/assets/e6737402-00e4-4a94-b668-9f2870f618f4)
 
+## Jenkins stage views for infra and build pipelines
+
+![Screenshot 2025-06-30 164857](https://github.com/user-attachments/assets/2b658e59-c156-4f6f-9819-3a2c3a6b2b62)
+
+![Screenshot 2025-06-30 164930](https://github.com/user-attachments/assets/2a25614e-9768-4dfd-bf5c-31385cbbb4e4)
+
+
+
+
