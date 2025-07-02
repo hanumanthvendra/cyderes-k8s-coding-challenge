@@ -111,7 +111,7 @@ helm upgrade nginx-hello-friend . \
 
 🔹 3. Access the Application:
 
-http://ac51886d48b5b4e1591a74d670b32fc9-846705458.us-east-1.elb.amazonaws.com/
+http://ac51886d48b5b4e1591a74d670b32fc9-846705458.us-east-1.elb.amazonaws.com/ ( from 02-07-2025. 9:30 pm IST this public url is not available anymore, as i kept this application alive for 3 days, no response from HR team, so i think position is closed )
 
 ![Screenshot 2025-06-30 114108](https://github.com/user-attachments/assets/e6737402-00e4-4a94-b668-9f2870f618f4)
 
